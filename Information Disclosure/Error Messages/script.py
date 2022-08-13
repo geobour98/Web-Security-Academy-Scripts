@@ -10,9 +10,9 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 parser = argparse.ArgumentParser(description="""Information Disclosure Web Security Academy
 
-Example usage with proxy: python3 script.py -u 'https://0a4b003803f44a75c13da5e2009400df.web-security-academy.net' -c 'test'' -p 127.0.0.1:8080
+Example usage with proxy: python3 script.py -u "https://0a4b003803f44a75c13da5e2009400df.web-security-academy.net" -c "test'" -p 127.0.0.1:8080
 
-Example usage without proxy: python3 script.py -u 'https://0a4b003803f44a75c13da5e2009400df.web-security-academy.net' -c 'test'' 
+Example usage without proxy: python3 script.py -u "https://0a4b003803f44a75c13da5e2009400df.web-security-academy.net" -c "test'" 
 
 Information disclosure in error messages solution: test'
 """, usage='use "python3 %(prog)s --help" for more information', formatter_class=RawTextHelpFormatter)
