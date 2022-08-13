@@ -1,6 +1,6 @@
 # How to run script.py
 
-1. File path traversal, simple case
+## 1. File path traversal, simple case
 
 No proxy:
 - `python3 script.py -u "https://0a4b003803f44a75c13da5e2009400df.web-security-academy.net" -c "../../../etc/passwd"`
