@@ -8,7 +8,7 @@ from argparse import RawTextHelpFormatter
 # Disable warnings related to certificates
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-parser = argparse.ArgumentParser(description="""File Path Traversal Web Security Academy
+parser = argparse.ArgumentParser(description="""OS Command Injection Web Security Academy
 
 Example usage with proxy: python3 script.py -u "https://0a4b003803f44a75c13da5e2009400df.web-security-academy.net" -c "1|whoami" -p 127.0.0.1:8080
 
