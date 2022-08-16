@@ -1,5 +1,7 @@
 # How to run script.py
 
+## The labs that script.py is valid are the following:
+
 ### 1. Reflected XSS into HTML context with nothing encoded
 
 No proxy:
