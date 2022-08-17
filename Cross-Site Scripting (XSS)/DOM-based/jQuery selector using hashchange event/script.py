@@ -15,13 +15,10 @@ parser = argparse.ArgumentParser(description="""Cross-Site Scripting (XSS) Web S
 
 Example usage with proxy: python3 script.py -u "https://0a4b003803f44a75c13da5e2009400df.web-security-academy.net" -c "<iframe src="https://0a4b003803f44a75c13da5e2009400df.web-security-academy.net#" onload="this.src+='<img src=1 onerror=print(1)>'">" -p 127.0.0.1:8080
 
-Example usage without proxy: python3 script.py -u "https://0a4b003803f44a75c13da5e2009400df.web-security-academy.net" -c "<iframe src="https://0a4b003803f44a75c13da5e2009400df.web-security-academy.net#" onload="this.src+='<img src=1 onerror=print(1)>'">" 
-
 If you encounter this error: "selenium.common.exceptions.WebDriverException: Message: 'geckodriver' executable needs to be in PATH." you can follow this guide: https://askubuntu.com/questions/870530/how-to-install-geckodriver-in-ubuntu
 """, usage='use "python3 %(prog)s --help" for more information', formatter_class=RawTextHelpFormatter)
 parser.add_argument('-u', '--url', help='URL, Example: https://0a4b003803f44a75c13da5e2009400df.web-security-academy.net', required=True)
 parser.add_argument('-c', '--command', help='Command to run, Example: <iframe src="https://vulnerable-website.com#" onload="this.src+=\'<img src=1 onerror=print(1)>\'">', required=True)
-parser.add_argument('-p', '--proxy', help='Proxy, Example: 127.0.0.1:8080', required=False)
 args = parser.parse_args()
 
 if args.url.endswith("/"):
