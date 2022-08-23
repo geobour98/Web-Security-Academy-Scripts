@@ -26,7 +26,6 @@ else:
 s = requests.Session()
 
 def bypass_2fa(s, url):
-    global csrf, path
     login_path = '/login'
     data ={
         "username": "carlos",
